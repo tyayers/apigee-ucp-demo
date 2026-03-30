@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-ExtractRequestPrompt">
+  <DisplayName>AM-ExtractRequestPrompt</DisplayName>
+  <Properties/>
+  <AssignVariable>
+    <Name>request_jsonpath</Name>
+    <Value>{$.contents[*].parts[*].text}</Value>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>request_prompt_value</Name>
+    <Template>{request_jsonpath}</Template>
+  </AssignVariable>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</AssignMessage>

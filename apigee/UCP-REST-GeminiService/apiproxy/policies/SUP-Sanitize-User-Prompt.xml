@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SanitizeUserPrompt async="false" continueOnError="false" enabled="true" name="SUP-Sanitize-User-Prompt">
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <DisplayName>Sanitize User Prompt</DisplayName>
+  <ModelArmor>
+    <TemplateName>projects/bap-emea-apigee-7/locations/us-west1/templates/test-template</TemplateName>
+  </ModelArmor>
+  <UserPromptSource>{request_prompt_value}</UserPromptSource>
+</SanitizeUserPrompt>

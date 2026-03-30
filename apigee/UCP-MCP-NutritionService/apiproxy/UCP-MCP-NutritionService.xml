@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="UCP-MCP-NutritionService">
+  <DisplayName/>
+  <Description/>
+  <CreatedAt>1774864701230</CreatedAt>
+  <LastModifiedAt>1774865078537</LastModifiedAt>
+  <BasePaths>/v1/nutrition</BasePaths>
+  <Policies>
+    <Policy>VA-VerifyKey</Policy>
+    <Policy>AM-RemoveKey</Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <TargetEndpoints>
+    <TargetEndpoint>default</TargetEndpoint>
+  </TargetEndpoints>
+</APIProxy>

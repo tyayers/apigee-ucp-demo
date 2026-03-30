@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <Description/>
+  <FaultRules/>
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Condition>request.verb = "OPTIONS"</Condition>
+        <Name>CORS</Name>
+      </Step>
+      <Step>
+        <Name>VAK</Name>
+      </Step>
+      <Step>
+        <Name>AM-ExtractRequestPrompt</Name>
+      </Step>
+      <Step>
+        <Name>SUP-Sanitize-User-Prompt</Name>
+      </Step>
+      <Step>
+        <Name>Token_Limit</Name>
+      </Step>
+    </Request>
+    <Response/>
+  </PreFlow>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <Flows/>
+  <HTTPProxyConnection>
+    <BasePath>/gemini</BasePath>
+    <Properties/>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+  <RouteRule name="default"/>
+</ProxyEndpoint>

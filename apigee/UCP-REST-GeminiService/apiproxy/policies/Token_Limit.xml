@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PromptTokenLimit continueOnError="false" enabled="true" name="Token_Limit">
+  <DisplayName/>
+  <Properties/>
+  <Identifier ref="request.header.x-api-key"/>
+  <Rate>60pm</Rate>
+  <UseEffectiveCount>true</UseEffectiveCount>
+</PromptTokenLimit>

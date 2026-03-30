@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="3" name="UCP-MCP-IngredientsService">
+  <DisplayName>Ingredients Service API</DisplayName>
+  <Description>A RESTful API to get ingredients for a specific food using Gemini.</Description>
+  <CreatedAt>1774867622612</CreatedAt>
+  <LastModifiedAt>1774867622612</LastModifiedAt>
+  <BasePaths>/ingredients/mcp</BasePaths>
+  <Policies>
+    <Policy>AM-InitializeRes</Policy>
+    <Policy>AM-InitializedRes</Policy>
+    <Policy>AM-PingRes</Policy>
+    <Policy>AM-PromptsListRes</Policy>
+    <Policy>AM-ResourcesListRes</Policy>
+    <Policy>AM-ResourcesTemplatesListRes</Policy>
+    <Policy>AM-SaveReq</Policy>
+    <Policy>AM-SetCustomError</Policy>
+    <Policy>AM-SetGenericError</Policy>
+    <Policy>AM-ToolsListRes</Policy>
+    <Policy>CORS-Allow</Policy>
+    <Policy>JS-FilterHeaderTools</Policy>
+    <Policy>JS-ParseMCPReq</Policy>
+    <Policy>JS-ProcessMCPReq</Policy>
+    <Policy>JS-ProcessRestRes</Policy>
+    <Policy>JS-ValidateTools</Policy>
+    <Policy>RF-Method404</Policy>
+    <Policy>VA-VerifyKey</Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <Resources>
+    <Resource>jsc://filter-header-tools.cjs</Resource>
+    <Resource>jsc://mcp-tools.cjs</Resource>
+    <Resource>jsc://mcp.cjs</Resource>
+    <Resource>jsc://parse-mcp.cjs</Resource>
+    <Resource>jsc://process-mcp-req.cjs</Resource>
+    <Resource>jsc://process-rest-res.cjs</Resource>
+    <Resource>jsc://validate-tools.cjs</Resource>
+  </Resources>
+  <TargetEndpoints>
+    <TargetEndpoint>tool-call</TargetEndpoint>
+  </TargetEndpoints>
+</APIProxy>

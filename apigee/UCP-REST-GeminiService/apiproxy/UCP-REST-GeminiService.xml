@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="UCP-REST-GeminiService">
+  <DisplayName/>
+  <Description/>
+  <CreatedAt>1774869262084</CreatedAt>
+  <LastModifiedAt>1774869298320</LastModifiedAt>
+  <BasePaths>/llm-testing</BasePaths>
+  <Policies>
+    <Policy>SUP-Sanitize-User-Prompt</Policy>
+    <Policy>Token_Limit</Policy>
+    <Policy>AM-ExtractRequestPrompt</Policy>
+    <Policy>VAK</Policy>
+    <Policy>CORS</Policy>
+    <Policy>Response_Token_Limit</Policy>
+    <Policy>AM-SetCacheResponseHeaders</Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <TargetEndpoints>
+    <TargetEndpoint>default</TargetEndpoint>
+  </TargetEndpoints>
+</APIProxy>

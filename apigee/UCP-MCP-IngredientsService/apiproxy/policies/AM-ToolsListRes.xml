@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-ToolsListRes">
+  <DisplayName>AM-ToolsListRes</DisplayName>
+  <Set>
+    <StatusCode>200</StatusCode>
+    <Payload contentType="application/json">{
+  "jsonrpc": "2.0",
+  "id": {mcp.id},
+  "result": {
+    "tools": 
+     
+      [
+        {
+          "description": "Retrieves a simple JSON string list of ingredients for the requested food by calling Vertex AI's Gemini 1.5 Flash model.",
+          "inputSchema": {
+            "properties": {
+              "food": {
+                "examples": [
+                  "chocolate chip cookies"
+                ],
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "name": "getIngredients",
+          "outputSchema": {
+            "oneOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "properties": {
+                  "error": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "error": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "error": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            ],
+            "type": "object"
+          },
+          "title": "Get ingredients for a food item"
+        }
+      ]
+
+  }
+}</Payload>
+  </Set>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

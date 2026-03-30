@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<APIProxy revision="3" name="UCP-REST-IngredientsService">
+  <DisplayName />
+  <Description />
+  <CreatedAt>1774864900065</CreatedAt>
+  <LastModifiedAt>1774864927523</LastModifiedAt>
+  <BasePaths>/v1/ingredientsservice</BasePaths>
+  <Policies>
+    <Policy>VA-VerifyKey</Policy>
+    <Policy>AM-RemoveKey</Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint>default</ProxyEndpoint>
+  </ProxyEndpoints>
+  <TargetEndpoints>
+    <TargetEndpoint>default</TargetEndpoint>
+  </TargetEndpoints>
+</APIProxy>

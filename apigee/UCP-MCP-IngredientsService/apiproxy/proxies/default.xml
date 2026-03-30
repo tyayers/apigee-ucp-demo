@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <FaultRules>
+    <FaultRule name="custom-error">
+      <Condition>error_body != null</Condition>
+      <Step>
+        <Name>AM-SetCustomError</Name>
+      </Step>
+    </FaultRule>
+  </FaultRules>
+  <DefaultFaultRule name="default-fault">
+    <Step>
+      <Name>AM-SetGenericError</Name>
+    </Step>
+  </DefaultFaultRule>
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>VA-VerifyKey</Name>
+      </Step>
+      <Step>
+        <Name>AM-SaveReq</Name>
+      </Step>
+      <Step>
+        <Name>CORS-Allow</Name>
+      </Step>
+      <Step>
+        <Name>JS-ParseMCPReq</Name>
+        <Condition>request.verb = "POST" and request.header.Content-Type = "application/json"</Condition>
+      </Step>
+    </Request>
+  </PreFlow>
+  <Flows>
+    <Flow name="initialize">
+      <Condition>request.verb = "POST" and mcp.method = "initialize"</Condition>
+      <Response>
+        <Step>
+          <Name>AM-InitializeRes</Name>
+        </Step>
+      </Response>
+    </Flow>
+    <Flow name="initialized">
+      <Condition>request.verb = "POST" and mcp.method = "notifications/initialized"</Condition>
+      <Response>
+        <Step>
+          <Name>AM-InitializedRes</Name>
+        </Step>
+      </Response>
+    </Flow>
+    <Flow name="resources/templates/list">
+      <Condition>request.verb = "POST" and mcp.method = "resources/templates/list"</Condition>
+      <Response>
+        <Step>
+          <Name>AM-ResourcesTemplatesListRes</Name>
+        </Step>
+      </Response>
+    </Flow>
+    <Flow name="resources/list">
+      <Condition>request.verb = "POST" and mcp.method = "resources/list"</Condition>
+      <Response>
+        <Step>
+          <Name>AM-ResourcesListRes</Name>
+        </Step>
+      </Response>
+    </Flow>
+    <Flow name="prompts/list">
+      <Condition>request.verb = "POST" and mcp.method = "prompts/list"</Condition>
+      <Response>
+        <Step>
+          <Name>AM-PromptsListRes</Name>
+        </Step>
+      </Response>
+    </Flow>
+    <Flow name="tools/list">
+      <Condition>request.verb = "POST" and mcp.method = "tools/list"</Condition>
+      <Response>
+        <Step>
+          <Name>JS-ValidateTools</Name>
+        </Step>
+        <Step>
+          <Name>AM-ToolsListRes</Name>
+        </Step>
+        <Step>
+          <Name>JS-FilterHeaderTools</Name>
+        </Step>
+      </Response>
+    </Flow>
+    <Flow name="ping">
+      <Condition>request.verb = "POST" and mcp.method = "ping"</Condition>
+      <Response>
+        <Step>
+          <Name>AM-PingRes</Name>
+        </Step>
+      </Response>
+    </Flow>
+    <Flow name="tools/call">
+      <Condition>request.verb = "POST" and mcp.method = "tools/call"</Condition>
+    </Flow>
+    <Flow name="method-404">
+      <Condition>true</Condition>
+      <Request>
+        <Step>
+          <Name>RF-Method404</Name>
+        </Step>
+      </Request>
+    </Flow>
+  </Flows>
+  <PostFlow name="PostFlow"/>
+  <HTTPProxyConnection>
+    <BasePath>/ingredients/mcp</BasePath>
+  </HTTPProxyConnection>
+  <RouteRule name="tool-call">
+    <Condition>mcp.method = "tools/call"</Condition>
+    <TargetEndpoint>tool-call</TargetEndpoint>
+  </RouteRule>
+  <RouteRule name="no-op"/>
+</ProxyEndpoint>

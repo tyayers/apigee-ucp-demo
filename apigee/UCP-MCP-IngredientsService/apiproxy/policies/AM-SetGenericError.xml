@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-SetGenericError">
+  <DisplayName>AM-SetGenericError</DisplayName>
+  <Properties/>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <Set>
+    <Payload contentType="application/json">{
+  "jsonrpc": "2.0",
+  "id": {mcp.id:1},
+  "error": {
+    "code": {error.status.code},
+    "message": "{escapeJSON(error.message)}"
+  }
+}</Payload>
+    <StatusCode>{error.status.code}</StatusCode>
+    <ReasonPhrase>{error.reason.phrase}</ReasonPhrase>
+  </Set>
+</AssignMessage>

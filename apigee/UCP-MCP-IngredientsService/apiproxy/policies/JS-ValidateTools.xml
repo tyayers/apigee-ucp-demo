@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript continueOnError="false" enabled="true" timeLimit="200" name="JS-ValidateTools">
+  <DisplayName>JS-ValidateTools</DisplayName>
+  <IncludeURL>jsc://mcp.cjs</IncludeURL>
+  <IncludeURL>jsc://mcp-tools.cjs</IncludeURL>
+  <ResourceURL>jsc://validate-tools.cjs</ResourceURL>
+</Javascript>
