@@ -1,0 +1,55 @@
+openapi: 3.1.0
+info:
+  title: Ingredients Service API
+  description: A RESTful API to get ingredients for a specific food using Gemini.
+  version: 1.0.0
+servers:
+  - url: https://api.apigee-bap7.agenticplatform.dev
+    description: prod
+paths:
+  /ingredientsservice/ingredients:
+    get:
+      summary: Get ingredients for a food item
+      description: Retrieves a simple JSON string list of ingredients for the requested food by calling Vertex AI's Gemini 1.5 Flash model.
+      operationId: getIngredients
+      parameters:
+        - name: food
+          in: query
+          description: The name of the food or dish to get ingredients for.
+          required: true
+          schema:
+            type: string
+            example: "chocolate chip cookies"
+      responses:
+        "200":
+          description: An object containing a JSON array of ingredients.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ingredients:
+                    type: array
+                    items:
+                      type: string
+              example:
+                ingredients:
+                  [
+                    "butter",
+                    "sugar",
+                    "brown sugar",
+                    "eggs",
+                    "vanilla extract",
+                    "flour",
+                    "baking soda",
+                    "salt",
+                    "chocolate chips",
+                  ]
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+security:
+  - ApiKeyAuth: []

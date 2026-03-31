@@ -5,7 +5,7 @@
     "name": "Chocochip Cookies",
     "sku": "COOKIES-001",
     "image": [
-      "https://a2a-business-agent-bap7-323709580283.europe-west1.run.app/images/cookies.jpg"
+      "https://github.com/tyayers/apigee-ucp-demo/blob/main/a2a/business_agent/src/business_agent/data/images/cookies.jpg?raw=true"
     ],
     "brand": {
       "@type": "Brand",
@@ -32,7 +32,7 @@
     "name": "Fresh Strawberries",
     "sku": "STRAW-001",
     "image": [
-      "https://a2a-business-agent-bap7-323709580283.europe-west1.run.app/images/strawberries.jpg"
+      "https://github.com/tyayers/apigee-ucp-demo/blob/main/a2a/business_agent/src/business_agent/data/images/strawberries.jpg?raw=true"
     ],
     "brand": {
       "@type": "Brand",
@@ -59,7 +59,7 @@
     "name": "Classic Potato Chips",
     "sku": "CHIPS-001",
     "image": [
-      "https://a2a-business-agent-bap7-323709580283.europe-west1.run.app/images/chips.jpg"
+      "https://github.com/tyayers/apigee-ucp-demo/blob/main/a2a/business_agent/src/business_agent/data/images/chips.jpg?raw=true"
     ],
     "brand": {
       "@type": "Brand",
@@ -86,7 +86,7 @@
     "name": "Baked Sweet Potato Chips",
     "sku": "SW-CHIPS-001",
     "image": [
-      "https://a2a-business-agent-bap7-323709580283.europe-west1.run.app/images/chips.jpg"
+      "https://github.com/tyayers/apigee-ucp-demo/blob/main/a2a/business_agent/src/business_agent/data/images/chips.jpg?raw=true"
     ],
     "brand": {
       "@type": "Brand",
@@ -113,7 +113,7 @@
     "name": "Classic Oat Cookies",
     "sku": "O-COOKIES-001",
     "image": [
-      "https://a2a-business-agent-bap7-323709580283.europe-west1.run.app/images/oat_cookies.jpg"
+      "https://github.com/tyayers/apigee-ucp-demo/blob/main/a2a/business_agent/src/business_agent/data/images/oat_cookies.jpg?raw=true"
     ],
     "brand": {
       "@type": "Brand",
@@ -140,7 +140,7 @@
     "name": "Nutri-Bar",
     "sku": "NUTRIBAR-001",
     "image": [
-      "https://a2a-business-agent-bap7-323709580283.europe-west1.run.app/images/nutribar.jpg"
+      "https://github.com/tyayers/apigee-ucp-demo/blob/main/a2a/business_agent/src/business_agent/data/images/nutribar.jpg?raw=true"
     ],
     "brand": {
       "@type": "Brand",

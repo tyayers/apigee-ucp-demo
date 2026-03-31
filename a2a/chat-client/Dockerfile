@@ -6,7 +6,8 @@ WORKDIR /opt/app
 COPY . .
 
 RUN npm i
+RUN npm run build
 
-EXPOSE 3000
+EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD [ "node", "server.ts" ]

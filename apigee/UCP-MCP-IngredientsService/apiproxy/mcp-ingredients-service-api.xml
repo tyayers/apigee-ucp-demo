@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<APIProxy revision="0" name="mcp-ingredients-service-api">
+  <DisplayName>Ingredients Service API</DisplayName>
+  <Description>A RESTful API to get ingredients for a specific food using Gemini.</Description>
+</APIProxy>

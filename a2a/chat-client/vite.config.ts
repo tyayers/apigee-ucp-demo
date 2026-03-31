@@ -27,14 +27,7 @@ export default defineConfig(() => {
         "ucpdemo-chat-609874082793.europe-west1.run.app",
         "localhost",
       ],
-      proxy: {
-        "/api": {
-          target: "https://api.apigee-bap7.agenticplatform.dev/businessservice", // https://api.apigee-bap7.agenticplatform.dev/businessservice - https://a2a-business-agent-bap7-323709580283.europe-west1.run.app - http://localhost:10999 or http://35.210.153.88:10999
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ""),
-          secure: false,
-        },
-      },
+      proxy: {},
     },
     plugins: [react()],
     define: {},

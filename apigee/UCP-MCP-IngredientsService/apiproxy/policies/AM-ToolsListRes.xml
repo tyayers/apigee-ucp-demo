@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <AssignMessage continueOnError="false" enabled="true" name="AM-ToolsListRes">
   <DisplayName>AM-ToolsListRes</DisplayName>
   <Set>
@@ -25,38 +25,14 @@
           },
           "name": "getIngredients",
           "outputSchema": {
-            "oneOf": [
-              {
+            "properties": {
+              "ingredients": {
                 "items": {
                   "type": "string"
                 },
                 "type": "array"
-              },
-              {
-                "properties": {
-                  "error": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              },
-              {
-                "properties": {
-                  "error": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              },
-              {
-                "properties": {
-                  "error": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
               }
-            ],
+            },
             "type": "object"
           },
           "title": "Get ingredients for a food item"

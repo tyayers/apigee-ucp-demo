@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ProxyEndpoint name="default">
   <FaultRules>
     <FaultRule name="custom-error">
@@ -15,9 +15,6 @@
   </DefaultFaultRule>
   <PreFlow name="PreFlow">
     <Request>
-      <Step>
-        <Name>VA-VerifyKey</Name>
-      </Step>
       <Step>
         <Name>AM-SaveReq</Name>
       </Step>

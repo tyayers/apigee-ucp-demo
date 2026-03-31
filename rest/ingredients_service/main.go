@@ -56,8 +56,8 @@ func ingredientsHandler(w http.ResponseWriter, r *http.Request) {
 	// Enforce JSON output format
 	model.ResponseMIMEType = "application/json"
 
-	// Prompt engineering to ask for exactly a JSON array of strings
-	prompt := fmt.Sprintf("List the ingredients for '%s'. Return ONLY a flat JSON array of strings representing the ingredients. Do not wrap it in a markdown block, just output the raw JSON.", food)
+	// Prompt engineering to ask for exactly a JSON object with an "ingredients" property
+	prompt := fmt.Sprintf("List the ingredients for '%s'. Return ONLY a JSON object with an \"ingredients\" property containing a flat array of strings representing the ingredients. Do not wrap it in a markdown block, just output the raw JSON.", food)
 
 	resp, err := model.GenerateContent(ctx, genai.Text(prompt))
 	if err != nil {
