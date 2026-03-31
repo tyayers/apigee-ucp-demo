@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<VerifyAPIKey continueOnError="false" enabled="true" name="VA-VerifyKey">
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<VerifyAPIKey continueOnError="false" enabled="false" name="VA-VerifyKey">
   <DisplayName>VA-VerifyKey</DisplayName>
-  <Properties/>
-  <APIKey ref="request.header.x-api-key"/>
+  <Properties />
+  <APIKey ref="request.header.x-api-key" />
 </VerifyAPIKey>

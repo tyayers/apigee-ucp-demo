@@ -14,11 +14,11 @@
   <HTTPTargetConnection>
     <Properties />
     <URL
-    >https://ucpdemo-indredients-service-944063670264.europe-west1.run.app</URL>
+    >https://ucpdemo-ingredients-service-944063670264.europe-west1.run.app</URL>
     <Authentication>
       <GoogleIDToken>
         <Audience
-        >https://ucpdemo-indredients-service-944063670264.europe-west1.run.app</Audience>
+        >https://ucpdemo-ingredients-service-944063670264.europe-west1.run.app</Audience>
       </GoogleIDToken>
     </Authentication>
   </HTTPTargetConnection>

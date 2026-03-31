@@ -63,6 +63,6 @@
       "tags": ["checkout"]
     }
   ],
-  "url": "https://api.apigee-bap7.agenticplatform.dev/businessservice/agent_demo",
+  "url": "https://api.apigee-bap7.agenticplatform.dev/businessservice",
   "version": "1.0.0"
 }

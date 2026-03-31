@@ -48,20 +48,6 @@ from .store import RetailStore
 store = RetailStore()
 mpp = MockPaymentProcessor()
 
-ingredients_mcp_server = MCPToolset(
-    connection_params=StreamableHTTPConnectionParams(
-        url="https://api.apigee-bap7.agenticplatform.dev/ingredients/mcp",
-        headers={"x-api-key": os.environ["APIGEE_API_KEY"]},
-    ),
-)
-
-nutrition_mcp_server = MCPToolset(
-    connection_params=StreamableHTTPConnectionParams(
-        url="https://api.apigee-bap7.agenticplatform.dev/nutrition/mcp",
-        headers={"x-api-key": os.environ["APIGEE_API_KEY"]},
-    ),
-)
-
 
 def _create_error_response(message: str) -> dict:
     return {"message": message, "status": "error"}
@@ -448,6 +434,22 @@ model = ApigeeLlm(
     # Pass necessary authentication/authorization headers (like an API key)
     custom_headers={"x-api-key": os.environ["APIGEE_API_KEY"]},
 )
+
+
+ingredients_mcp_server = MCPToolset(
+    connection_params=StreamableHTTPConnectionParams(
+        url="https://api.apigee-bap7.agenticplatform.dev/ingredients/mcp",
+        headers={"x-api-key": os.environ["APIGEE_API_KEY"]},
+    ),
+)
+
+nutrition_mcp_server = MCPToolset(
+    connection_params=StreamableHTTPConnectionParams(
+        url="https://api.apigee-bap7.agenticplatform.dev/nutrition/mcp",
+        headers={"x-api-key": os.environ["APIGEE_API_KEY"]},
+    ),
+)
+
 
 root_agent = LlmAgent(
     name="shopper_agent",

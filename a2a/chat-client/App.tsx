@@ -287,7 +287,6 @@ function App() {
           "https://ucp.dev/specification/reference?v=2026-01-11",
         "UCP-Agent":
           'profile="https://ucp-chat-service-bap7-323709580283.europe-west1.run.app/profile/agent_profile.json"',
-        "x-api-key": process.env["APIGEE_API_KEY"],
       };
 
       const response = await fetch("/api", {
