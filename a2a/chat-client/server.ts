@@ -1,5 +1,12 @@
 import express from "express";
 
+// do a ping to the businessservice proxy to wake it up from cloud run sleep :)
+fetch(
+  (process.env.TARGET_URL ||
+    "https://api.apigee-bap7.agenticplatform.dev/businessservice") +
+    "/.well-known/agent-card.json",
+);
+
 const app = express();
 // app.use(cors());
 
