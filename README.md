@@ -4,6 +4,8 @@ This is demo of putting Apigee proxies with authn/authz, quotas & security polic
 ## Test a deployed client
 Visit https://apigee-ucp.agenticplatform.dev to test.
 
+Start by asking for different products such as "Do you have any cookies?" or "How about nutribars?". Add products to your chart and checkout, asking about nutritional information, and complete the payment process using demo UCP providers.
+
 ## Deploy to Google Cloud
 To run this demo, you will need a Google Cloud Project with the services Apigee, Cloud Run & Model Armor active and provisioned. A service account (SA_EMAIL) is also needed with the roles **roles/run.invoker**, **roles/aiplatform.user**, and **roles/modelarmor.user**. A **Google AI API key** is needed for the business A2A service.
 
@@ -20,6 +22,9 @@ export APIGEE_ENV=YOUR_APIGEE_ENV
 export APIGEE_API_KEY=YOUR_APIGEE_KEY
 
 EOF
+
+# source .env file
+source .env
 
 # deploy the nutrition MCP service
 ./1.deploy-nutritionservice.sh

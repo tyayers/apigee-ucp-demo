@@ -5,8 +5,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
+    "start": "node server.ts",
+    "dev": "node server.ts",
     "build": "vite build && cp -r images ./dist",
     "preview": "vite preview"
   },

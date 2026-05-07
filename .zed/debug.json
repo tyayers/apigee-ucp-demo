@@ -1,0 +1,18 @@
+// Project-local debug tasks
+//
+// For more documentation on how to configure debug tasks,
+// see: https://zed.dev/docs/debugger
+[
+  {
+    "adapter": "JavaScript",
+    "label": "package.json > start",
+    "request": "launch",
+    "type": "pwa-node",
+    "args": ["run", "start"],
+    "cwd": "/home/tyayers/projects/apigee/apigee-ucp-demo/a2a/chat-client",
+    "runtimeExecutable": "$ZED_CUSTOM_TYPESCRIPT_RUNNER",
+    "envFile": "../../.env",
+    "runtimeArgs": ["--inspect-brk"],
+    "console": "integratedTerminal",
+  },
+]

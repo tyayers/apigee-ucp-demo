@@ -1,0 +1,79 @@
+name: UCP-A2A-BusinessService
+displayName: ""
+type: proxy
+categories: []
+description: UCP-A2A-BusinessService
+documentation: ""
+parameters:
+  - name: CLOUDRUN_URL
+    paths:
+      - $.targets[:1].url
+      - $.targets[:1].httpTargetConnection.url
+      - $.targets[:1].httpTargetConnection.authentication.googleIdToken.audience
+    description: The URL of the Cloud Run service to proxy.
+    default: https://businessservice-323709580283.europe-west1.run.app
+    examples:
+      - https://exampleservice-2.us-central1.run.app
+      - https://exampleservice-1.europe-west1.run.app
+endpoints:
+  - name: businessservice
+    basePath: /businessservice
+    routes:
+      - name: default
+        target: businessservice
+    flows:
+      - name: PreFlow
+        mode: Request
+        steps:
+          - name: VA-VerifyKey
+            condition: proxy.pathsuffix != "/.well-known/agent-card.json"
+          - name: AM-RemoveKey
+    faultRules: []
+targets:
+  - name: businessservice
+    url: https://ucpdemo-businessservice-944063670264.europe-west1.run.app
+    flows: []
+    faultRules: []
+    httpTargetConnection:
+      authentication:
+        googleIdToken:
+          audience: https://ucpdemo-businessservice-944063670264.europe-west1.run.app
+      properties: {}
+      url: https://ucpdemo-businessservice-944063670264.europe-west1.run.app
+policies:
+  - name: AM-RemoveKey
+    type: AssignMessage
+    content:
+      assignMessage:
+        metadata:
+          continueOnError: "false"
+          enabled: "true"
+          name: AM-RemoveKey
+        displayName: AM-RemoveKey
+        properties: {}
+        remove:
+          headers:
+            header:
+              metadata:
+                name: x-api-key
+        ignoreUnresolvedVariables: "true"
+        assignTo:
+          metadata:
+            createNew: "false"
+            transport: http
+            type: request
+  - name: VA-VerifyKey
+    type: VerifyAPIKey
+    content:
+      verifyApiKey:
+        metadata:
+          continueOnError: "false"
+          enabled: "true"
+          name: VA-VerifyKey
+        displayName: VA-VerifyKey
+        properties: {}
+        apiKey:
+          metadata:
+            ref: request.header.x-api-key
+resources: []
+tests: []

@@ -58,10 +58,11 @@ const initialMessage: ChatMessage = createChatMessage(
  */
 function App() {
   const [user_email, _setUserEmail] = useState<string | null>(
-    "foo@example.com",
+    "test@example.com",
   );
   const [messages, setMessages] = useState<ChatMessage[]>([initialMessage]);
   const [isLoading, setIsLoading] = useState(false);
+  const [mode, setMode] = useState<"freemium" | "pro">("freemium");
   const [contextId, setContextId] = useState<string | null>(null);
   const [taskId, setTaskId] = useState<string | null>(null);
   const credentialProvider = useRef(new CredentialProviderProxy());
@@ -285,6 +286,7 @@ function App() {
         "Content-Type": "application/json",
         "X-A2A-Extensions":
           "https://ucp.dev/specification/reference?v=2026-01-11",
+        "x-mode": mode,
         "UCP-Agent":
           'profile="https://ucp-chat-service-bap7-323709580283.europe-west1.run.app/profile/agent_profile.json"',
       };
@@ -380,7 +382,12 @@ function App() {
 
   return (
     <div className="flex flex-col h-screen max-h-screen bg-white font-sans">
-      <Header logoUrl={appConfig.logoUrl} title={appConfig.name} />
+      <Header
+        logoUrl={appConfig.logoUrl}
+        title={appConfig.name}
+        mode={mode}
+        onModeChange={setMode}
+      />
       <main
         ref={chatContainerRef}
         className="flex-grow overflow-y-auto p-4 md:p-6 space-y-2"

@@ -430,11 +430,10 @@ model = ApigeeLlm(
     # Specify the Apigee route to your model. For more info, check out the ApigeeLlm documentation (https://github.com/google/adk-python/tree/main/contributing/samples/hello_world_apigeellm).
     model="apigee/vertex_ai/gemini-2.5-pro",
     # The proxy URL of your deployed Apigee proxy including the base path
-    proxy_url="https://api.apigee-bap7.agenticplatform.dev/gemini",
+    proxy_url="https://34-111-185-182.nip.io/cached/gemini",
     # Pass necessary authentication/authorization headers (like an API key)
     custom_headers={"x-api-key": os.environ["APIGEE_API_KEY"]},
 )
-
 
 ingredients_mcp_server = MCPToolset(
     connection_params=StreamableHTTPConnectionParams(
@@ -467,7 +466,7 @@ root_agent = LlmAgent(
         " search for the products and then add the matching products to"
         " checkout session.If the user asks to replace products,"
         " use remove_from_checkout and add_to_checkout tools to replace the"
-        " products to match the user request"
+        " products to match the user request."
     ),
     tools=[
         search_shopping_catalog,
